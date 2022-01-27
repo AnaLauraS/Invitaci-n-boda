@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title><script src="js/variables.js"></script>
+    <meta name="description" content="Invitaciones para eventos - Modelo Boda">
+    <meta name="author" content="Desarrollado por Siczkowski - sicz.ana@hotmail.com">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <!--link a las fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <nav class="cabecera">
+            <ul>
+                <li> <a href="https://invitameok.com/juanitafifteen#homeslider-wrap">Inicio   <i class="icono"></i></a>
+                </li>
+                <li> <a href="https://invitameok.com/juanitafifteen#wedding-header">Lugar y fecha   <i class="icono"></i></a>
+                </li>
+                <li> <a href="https://invitameok.com/juanitafifteen#wedding-header">Historia en las redes   <i class="icono"></i></a>
+                </li>
+            </ul>
+            <ul>
+                <li> <a href="https://invitameok.com/juanitafifteen#reserve-image-background">Confirmar asistencia   <i class="icono"></i></a>
+                </li>
+                <li> <a href="https://invitameok.com/juanitafifteen#gift-registry">Mesa de regalos   <i class="icono"></i></a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="respmenu">
+            <input type="checkbox">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+            <nav>
+              <ul>
+                <li><br> </li>
+                <li><br> </li>
+                <li><a href="#inicio">Inicio   <i class="icono"></i></a></li>
+                <li><a href="#lyf">Lugar y fecha   <i class="icono"></i></a></li>
+                <li><a href="#hi">Historia en las redes   <i class="icono"></i></a></li>
+                <li><a href="#ca">Confirmar asistencia   <i class="icono"></i></a></li>
+                <li><a href="#mesa">Mesa de regalos   <i class="icono"></i></a></li>
+              </ul>
+            </nav>
+        </div>
+        <script src="js/variables.js"></script>
+        <img src="./img/images.png" alt="texto del evento - by ana" class="logoprin">
+    </header>
+    
+    <!--imagenes en pexels.com y en https://pixabay.com/es/-->
+    <section class="portada" id="inicio">
+        <div><img src="./img/anillos de boda.jpg" alt="Portada de evento" class="fondoPortada"></div>
+        <div class="textoPortada">
+            <h1>Sofía & Esteban</h1>
+            <h2>Nuestra boda</h2>
+            <h3>
+                en <span id="days"></span> días, <span id="hours"></span> horas, <span id="minutes"></span> min<span id="segundos">, <span id="seconds"></span> seg</span>
+                <script src="js/cuentaRegresiva.js"></script>
+            </h3>
+        </div>
+    </section>
+    
+    <section class="cuerpo" id="lyf">
+        <h3>Lugar y fecha</h3>
+        <div class="caja">
+            <h4 class="lugar"></h4>
+            <iframe width="90%" height="400" style="border:0" loading="lazy" allowfullscreen id="apiMap"></iframe> 
+            <p class="ultimo">Dirección: <span id="dir"></span></p>
+            <script src="js/variables.js"></script>
+        </div>
+        <div class="caja">
+            <h4>Día y hora</h4>
+            <div id="detalles">
+                <i class="fas fa-calendar-day"></i>
+                <i class="fas fa-clock"></i>
+                <p class="uno">Te esperamos el</p>
+                <span id="dia"></span> 
+                <p class="dos">a las</p>
+                <span id="hora" class="ultimo"></span> 
+            </div>    
+            <script src="js/variables.js"></script>
+        </div>
+        <div class="caja">
+            <h4>Código de vestimenta</h4>
+            <img class="img_code" alt="dress code">
+            <p class="dress_code ultimo"></p>
+            <script src="js/variables.js"></script>
+        </div>
+    </section>
+    
+    <section class="cuerpo hist" id="hi">
+        <h3 class="margen">Historia en las redes</h3>
+        <img src="./img/colores.jpg" class="inst" alt="fondo instagram">
+        <div class="caja">
+            <div class="container-slider">
+                <div class="slider" id="slider">
+                    <!--agregar tantos div como fotos principales. Acordarse de modificar el src-->
+                    <div class="slider__section"><img src="./img/casamiento1.jpg" alt="" class="slider__img"></div>
+                    <div class="slider__section"><img src="./img/casamiento2.jpg" alt="" class="slider__img"></div>
+                    <div class="slider__section"><img src="./img/casamiento3.jpg" alt="" class="slider__img"></div>
+                </div>
+                <div class="slider_btn slider_btn-right" id="btn-right"><i class="fas fa-chevron-circle-right"></i></div>
+                <div class="slider_btn slider_btn-left" id="btn-left"><i class="fas fa-chevron-circle-left"></i></div>
+            </div>
+            <script src="./js/slider.js"></script>
+        </div>
+        <div class="centrado">
+            <i class="fab fa-instagram"></i>
+            <p class="centrado">Seguí nuestra historía en instagram</p>
+            <a class="linkInsta" target="_blank"><span id="instagram"></span></a>
+            <script src="js/variables.js"></script>
+        </div>
+    </section>
+
+    <section class="cuerpo" id="ca">
+        <h3 class="margen">Confirmar asistencia</h3>
+        <div class="caja confirmaciones">
+            <a class="confirmacion1" target="_blank">
+                <button class="btn-conf">
+                    <div class="btn-flex">
+                        <i class="fab fa-whatsapp"></i>
+                        <span id="conf1"></span>
+                    </div>
+                </button>
+            </a>
+            <a class="confirmacion2" target="_blank">
+                <button class="btn-conf">
+                    <div class="btn-flex">
+                        <i class="fab fa-whatsapp"></i>
+                        <span id="conf2"></span>
+                    </div>
+                </button>
+            </a>
+            
+        </div>
+    </section>
+
+    <section class="cuerpo" id="mesa">
+        <h3 class="margen">Mesa de regalos</h3>
+        <div class="caja confirmaciones">
+            <a class="mesa1" target="_blank">
+                <button class="btn-mesa">
+                    <img src="./img/celebra-logo.svg" alt="">
+                </button>
+            </a>
+            <a class="mesa2" target="_blank">
+                <button class="btn-mesa">
+                    <img src="./img/liverpool_logo.png" alt="">
+                </button>
+            </a>
+            <script src="js/variables.js"></script>
+        </div>
+    </section>
+
+    <section class="fin">
+        <img src="./img/manos fin.jpg" alt="" class="img_fin">
+        <h2>¡Te esperamos!</h2>
+        <h3 id="firma"></h3>
+        <script src="js/variables.js"></script>
+    </section>
+    
+    <footer><p>¿Querés tus propias invitaciones web? Ingresá a --link--</p> 
+        <p>Todos los derechos reservados</p></footer>
+
+</body>
+
+
+</html>

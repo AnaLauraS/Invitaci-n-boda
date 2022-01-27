@@ -1,0 +1,426 @@
+$color-texto-principal: rgb(255, 243, 251);
+$color-defondo-principal: rgb(12, 12, 75);
+$color-cabecera: black;
+$color-destacado: rgb(211, 163, 211);
+// imagen de fondo cambiable en Body - https://pixabay.com/es/
+
+* {
+padding: 0%;
+margin: 0%;
+box-sizing: border-box;
+font-size: 16px;
+}
+
+a {
+    color: $color-destacado;
+    text-decoration: none;
+}
+
+header {
+  background: $color-cabecera;
+height: 5rem;
+font-size: 0.5rem;
+padding-left: 5rem;
+padding-right: 5rem;
+padding-top: 2rem;
+position: sticky;
+top: 0;
+z-index: 10;
+}
+
+body {
+  //background-color: $color-defondo-principal;
+  background-image: url("../img/otro.jpg");
+  width: 100%;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.cabecera {
+display: none;
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;   
+}
+}
+
+ul{
+  list-style-type: none;
+}
+
+//esto es para el menu hamburguesa
+.respmenu a {
+    color: $color-destacado;
+    display: block;
+    // padding para lo que esta dentro del menu
+    padding: 0.5rem 2rem;
+    border-bottom: 2px solid $color-defondo-principal;
+    background: $color-cabecera;
+    width: 15rem;
+  }
+  .respmenu input[type="checkbox"], .respmenu .fa-bars, .respmenu .fa-times {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+  }
+  .respmenu .fa-bars, .respmenu .fa-times {
+    font-size: 2rem;
+    pointer-events: none;
+  }
+  .respmenu input[type="checkbox"] {
+    opacity: 0;
+  }
+  .respmenu {
+    color: $color-destacado;
+    position: relative;
+    background: $color-cabecera;
+    min-height: 48px;
+    left: -4rem; 
+  }
+  .respmenu nav {
+    display: none;
+  }
+  .respmenu input:checked ~ nav {
+    display: block;
+  }
+  .respmenu input:checked ~ .fa-bars {
+    display: none;
+  }
+  .respmenu input:not(:checked) ~ .fa-times {
+    display: none;
+  }
+// hasta aca menu hamburguesa
+
+// recordar cambiar la imagen y hacer que encaje con los rem
+.logoprin {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 4rem;
+}
+
+.portada {
+  height: 30rem;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.fondoPortada {
+  width: 250%;
+  position: relative;
+  z-index: -1;
+  left: -12rem;
+}
+
+.textoPortada {
+  position: absolute;
+  top: 14rem;
+  right: 2rem;
+  text-align: right;
+  color: $color-defondo-principal;
+  line-height: 4rem;
+  z-index: -1;
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: underline overline dotted;
+}
+h2 {
+  font-family: 'The Nautigal', cursive;
+  font-size: 3.5rem;
+}
+h3, span {
+  font-family: 'The Nautigal', cursive;
+  font-size: 2.5rem;
+}
+#segundos {
+  display: none;
+}
+}
+
+.cuerpo {
+  text-align: center;
+  position: relative;
+  h3 {
+    font-family: 'The Nautigal', cursive;
+    font-weight: 180;
+    letter-spacing: 0.3rem;
+    font-size: 2.3rem;
+    color: $color-destacado;
+    text-shadow: 1px 1px 2px $color-defondo-principal, 0 0 1em $color-defondo-principal, 0 0 0.2em $color-defondo-principal;
+  }
+
+h4 {
+  padding: 1.3rem;
+  font-family: 'Cinzel', serif;
+  color: $color-texto-principal;
+  font-size: 0.8rem;
+}
+p, span{
+  padding-top: 0.4rem;
+  font-family: 'Cinzel', serif;
+  color: $color-texto-principal;
+  font-size: 0.7rem;
+  text-align: left;
+  padding-left: 5%;
+  padding-left: 5%;
+}
+}
+
+.ultimo {
+  padding-bottom: 1rem;
+}
+
+
+.caja {
+  border-radius: 12px;
+  margin: 1rem;
+  //box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue
+}
+
+div.caja{
+  background-color: rgba(83, 83, 83, 0.363);
+}
+
+// grid para los detalles del evento
+#detalles {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 4fr;
+}
+.fa-calendar-day {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  padding-top: 0.4rem;
+  font-size: 2rem;
+  color: $color-destacado;
+}
+.fa-clock {
+  grid-column: 1/2;
+  grid-row: 3/5;
+  padding-top: 0.6rem;
+  font-size: 2rem;
+  color: $color-destacado;
+}
+.uno {
+  grid-column: 2/3;
+  grid-row: 1;
+}
+#dia {
+  grid-column: 2/3;
+  grid-row: 2;
+  font-weight:bolder;
+}
+.dos {
+  grid-column: 2/3;
+  grid-row: 3;
+}
+#hora {
+  grid-column: 2/3;
+  grid-row: 4;
+  font-weight:bolder;
+}
+// fin del grid
+
+.margen {
+  padding-top: 1rem;
+}
+
+.hist {
+  height: 625px;
+  overflow-y: hidden;
+}
+
+// configuración del slide de fotos
+.container-slider {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.slider {
+  display: flex;
+  height: 400px;
+  width: 300%; //acá va 100*cantidad de imagenes
+  margin-left: -100%;
+}
+.slider__section {
+  width: 100%;
+}
+.slider__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.slider_btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  color: $color-destacado;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+.slider_btn-right {
+  right: 5px;
+}
+.slider_btn-left {
+  left: 5px;
+}
+.fas:hover {
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+// fin configuración del slide de fotos
+
+.inst {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height:780px;
+  width: 100vw;
+}
+
+.fab {
+  color: $color-texto-principal;
+  font-size: 3rem;
+}
+
+.centrado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p, a, span {
+    padding-left: 0;
+    padding-top: 0.8rem;
+  }
+  span {
+    font-weight:bolder;
+    font-size: 1rem;
+  }
+}
+
+.confirmaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.btn-conf {
+  width: 75%;
+  height: 3rem;
+  font-family: 'Cinzel', serif;
+  border-radius: 12px;
+  background-color: rgb(14, 112, 101);
+  span {
+    font-size: 1rem;
+  }
+  i {
+    font-size: 2rem;
+  }
+}
+.btn-flex {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.btn-mesa {
+  width: 75%;
+  height: 4rem;
+  border-radius: 12px;
+  background-color: $color-defondo-principal;
+  padding-top: 0.7rem;
+  img {
+    max-height: 2rem;
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+}
+
+.fin {
+  height: 30vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  object-fit: cover;
+  .img_fin {
+    position: absolute;
+    top: -85%;
+    left:0;
+    z-index: -1;
+    width: 100%;
+    object-fit: cover;
+  }
+  h2 {
+    padding-top: 2.5rem;
+    font-family: 'The Nautigal', cursive;
+    font-size: 5rem;
+    color: $color-defondo-principal;
+    text-shadow: 0 0 25px $color-destacado, 1px 1px 5px $color-texto-principal;
+  }
+  h3{
+    padding-top: 3.5rem;
+    padding-right: 1rem;
+    font-family: 'The Nautigal', cursive;
+    font-size: 2.5rem;
+    text-decoration: dotted underline;
+    text-align: right;
+    color: $color-defondo-principal;
+    text-shadow: 0 0 25px $color-destacado, 1px 1px 5px $color-texto-principal;
+  }
+}
+
+footer {
+  background-color: black;
+  text-align: center;
+  color: $color-texto-principal;
+  padding: 0.5rem;
+  line-height: 1.5rem;
+}
+
+// para monitores
+@media (min-width:769px) {
+  .cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+.respmenu {
+  display: none;
+}
+.logoprin {
+  right: 50%;
+  width: 4rem;
+}
+.fondoPortada {
+  width: 100%;
+  left: 0;
+}
+.textoPortada {
+  top: 40vh;
+  right: 35vh;
+  text-align: center;
+  line-height: 7.5rem;
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 7rem;
+}
+h3, span {
+  font-size: 4rem;
+}
+}
+.portada .textoPortada #segundos {
+  display: inline;
+}
+}
