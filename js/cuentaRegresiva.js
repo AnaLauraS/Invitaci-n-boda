@@ -1,5 +1,5 @@
 // modificar fecha y hora en DATE_TARGET con formato MM/DD/AAAA H:MM AM o PMla
-const DATE_TARGET = new Date('04/13/2022 0:01 AM');
+const DATE_TARGET = new Date('05/28/2022 0:01 AM');
 
 // DOM for render
 const SPAN_DAYS = document.querySelector('span#days');
@@ -23,14 +23,22 @@ function updateCountdown() {
     const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
 
     // Render
+    if (REMAINING_SECONDS>0){
     SPAN_DAYS.textContent = REMAINING_DAYS;
     SPAN_HOURS.textContent = REMAINING_HOURS;
     SPAN_MINUTES.textContent = REMAINING_MINUTES;
     SPAN_SECONDS.textContent = REMAINING_SECONDS;
+    } else {
+        SPAN_DAYS.textContent = "0";
+    SPAN_HOURS.textContent = 0;
+    SPAN_MINUTES.textContent = "0";
+    SPAN_SECONDS.textContent = 0;
+    }
 }
 
 // INIT
-updateCountdown();
+updateCountdown()
+
 // Refresh every second
 setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
 

@@ -16,60 +16,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     
 </head>
+
 <body>
     <header>
-        <nav class="cabecera">
-            <ul>
-                <li> <a href="https://invitameok.com/juanitafifteen#homeslider-wrap">Inicio   <i class="icono"></i></a>
-                </li>
-                <li> <a href="https://invitameok.com/juanitafifteen#wedding-header">Lugar y fecha   <i class="icono"></i></a>
-                </li>
-                <li> <a href="https://invitameok.com/juanitafifteen#wedding-header">Historia en las redes   <i class="icono"></i></a>
-                </li>
-            </ul>
-            <ul>
-                <li> <a href="https://invitameok.com/juanitafifteen#reserve-image-background">Confirmar asistencia   <i class="icono"></i></a>
-                </li>
-                <li> <a href="https://invitameok.com/juanitafifteen#gift-registry">Mesa de regalos   <i class="icono"></i></a>
-                </li>
-            </ul>
+        <nav id="nav" class="main-nav">
+            <div class="nav-links">
+                <a href="#" class="link-item">Inicio   <i class="icono"></i></a>
+                <a href="#lyf" class="link-item">Lugar y fecha   <i class="icono"></i></a>
+                <a href="#ca" class="link-item">Confirmar asistencia   <i class="icono"></i></a>
+                <a href="#mesa" class="link-item">Mesa de regalos   <i class="icono"></i></a>
+                <a href="#hi" class="link-item">Historia en las redes   <i class="icono"></i></a>
+            </div>
         </nav>
-
-        <div class="respmenu">
-            <input type="checkbox">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-times"></i>
-            <nav>
-              <ul>
-                <li><br> </li>
-                <li><br> </li>
-                <li><a href="#inicio">Inicio   <i class="icono"></i></a></li>
-                <li><a href="#lyf">Lugar y fecha   <i class="icono"></i></a></li>
-                <li><a href="#hi">Historia en las redes   <i class="icono"></i></a></li>
-                <li><a href="#ca">Confirmar asistencia   <i class="icono"></i></a></li>
-                <li><a href="#mesa">Mesa de regalos   <i class="icono"></i></a></li>
-              </ul>
-            </nav>
-        </div>
+        <button id="button-menu" class="button-menu"> 
+            <i class="fas fa-bars" style="display:block;"></i>
+            <i class="fas fa-times" style="display: none;"></i>
+        </button>
+        <script src="js/menu.js"></script>
         <script src="js/variables.js"></script>
         <img src="./img/images.png" alt="texto del evento - by ana" class="logoprin">
     </header>
     
     <!--imagenes en pexels.com y en https://pixabay.com/es/-->
-    <section class="portada" id="inicio">
+    <section class="portada">
         <div><img src="./img/anillos de boda.jpg" alt="Portada de evento" class="fondoPortada"></div>
         <div class="textoPortada">
             <h1>Sofía & Esteban</h1>
             <h2>Nuestra boda</h2>
             <h3>
                 en <span id="days"></span> días, <span id="hours"></span> horas, <span id="minutes"></span> min<span id="segundos">, <span id="seconds"></span> seg</span>
+                <br id="lyf">
                 <script src="js/cuentaRegresiva.js"></script>
             </h3>
         </div>
     </section>
     
-    <section class="cuerpo" id="lyf">
-        <h3>Lugar y fecha</h3>
+    <section class="cuerpo" >
+        <h3 class="margen">Lugar y fecha</h3>
         <div class="caja">
             <h4 class="lugar"></h4>
             <iframe width="90%" height="400" style="border:0" loading="lazy" allowfullscreen id="apiMap"></iframe> 
@@ -90,15 +73,53 @@
         </div>
         <div class="caja">
             <h4>Código de vestimenta</h4>
-            <img class="img_code" alt="dress code">
+            <img class="img_code" alt="dress code" id="ca">
             <p class="dress_code ultimo"></p>
             <script src="js/variables.js"></script>
         </div>
     </section>
     
-    <section class="cuerpo hist" id="hi">
+    <section class="cuerpo" >
+        <h3 class="margen">Confirmar asistencia</h3>
+        <div class="caja confirmaciones">
+            <a class="confirmacion1" target="_blank">
+                <button class="btn-conf">
+                    <div class="btn-flex">
+                        <i class="fab fa-whatsapp"></i>
+                        <span id="conf1"></span>
+                    </div>
+                </button>
+            </a>
+            <a class="confirmacion2" target="_blank" id="mesa">
+                <button class="btn-conf">
+                    <div class="btn-flex">
+                        <i class="fab fa-whatsapp"></i>
+                        <span id="conf2"></span>
+                    </div>
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <section class="cuerpo" >
+        <h3 class="margen">Mesa de regalos</h3>
+        <div class="caja confirmaciones">
+            <a class="mesa1" target="_blank">
+                <button class="btn-mesa">
+                    <img src="./img/celebra-logo.svg" alt="">
+                </button>
+            </a>
+            <a class="mesa2" target="_blank" id="hi">
+                <button class="btn-mesa">
+                    <img src="./img/liverpool_logo.png" alt="">
+                </button>
+            </a>
+            <script src="js/variables.js"></script>
+        </div>
+    </section>
+
+    <section class="cuerpo" >
         <h3 class="margen">Historia en las redes</h3>
-        <img src="./img/colores.jpg" class="inst" alt="fondo instagram">
         <div class="caja">
             <div class="container-slider">
                 <div class="slider" id="slider">
@@ -112,56 +133,16 @@
             </div>
             <script src="./js/slider.js"></script>
         </div>
-        <div class="centrado">
-            <i class="fab fa-instagram"></i>
+        <div class="centrado caja">
+            <a class="linkInsta" target="_blank"><img src="./img/insta2.png" alt="logo instagram" class="logo_inst"></a>
             <p class="centrado">Seguí nuestra historía en instagram</p>
-            <a class="linkInsta" target="_blank"><span id="instagram"></span></a>
+            <a class="linkInsta margen ultimo" target="_blank"><span id="instagram"></span></a>
             <script src="js/variables.js"></script>
         </div>
-    </section>
-
-    <section class="cuerpo" id="ca">
-        <h3 class="margen">Confirmar asistencia</h3>
-        <div class="caja confirmaciones">
-            <a class="confirmacion1" target="_blank">
-                <button class="btn-conf">
-                    <div class="btn-flex">
-                        <i class="fab fa-whatsapp"></i>
-                        <span id="conf1"></span>
-                    </div>
-                </button>
-            </a>
-            <a class="confirmacion2" target="_blank">
-                <button class="btn-conf">
-                    <div class="btn-flex">
-                        <i class="fab fa-whatsapp"></i>
-                        <span id="conf2"></span>
-                    </div>
-                </button>
-            </a>
-            
-        </div>
-    </section>
-
-    <section class="cuerpo" id="mesa">
-        <h3 class="margen">Mesa de regalos</h3>
-        <div class="caja confirmaciones">
-            <a class="mesa1" target="_blank">
-                <button class="btn-mesa">
-                    <img src="./img/celebra-logo.svg" alt="">
-                </button>
-            </a>
-            <a class="mesa2" target="_blank">
-                <button class="btn-mesa">
-                    <img src="./img/liverpool_logo.png" alt="">
-                </button>
-            </a>
-            <script src="js/variables.js"></script>
-        </div>
-    </section>
+    </section> 
 
     <section class="fin">
-        <img src="./img/manos fin.jpg" alt="" class="img_fin">
+        <img src="./img/manos fin.jpg" alt="imagen de cierre" class="img_fin">
         <h2>¡Te esperamos!</h2>
         <h3 id="firma"></h3>
         <script src="js/variables.js"></script>

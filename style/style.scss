@@ -14,18 +14,20 @@ font-size: 16px;
 a {
     color: $color-destacado;
     text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
 }
 
 header {
   background: $color-cabecera;
-height: 5rem;
-font-size: 0.5rem;
-padding-left: 5rem;
-padding-right: 5rem;
-padding-top: 2rem;
-position: sticky;
-top: 0;
-z-index: 10;
+  height: 5rem;
+  font-size: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 5rem;
+  padding-top: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 body {
@@ -36,61 +38,69 @@ body {
   overflow-x: hidden;
 }
 
-.cabecera {
-display: none;
-ul {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;   
-}
-}
-
-ul{
-  list-style-type: none;
-}
-
 //esto es para el menu hamburguesa
-.respmenu a {
+.main-nav{
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  margin-left: -100%;
+  transition: all .3s linear;
+  background-color: rgba(117, 117, 117, 0.7);
+  z-index: 100;
+}
+.main-nav.show{
+  margin-left: 0;
+}
+.nav-links{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 19rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-item{
+  margin-top: 2rem;
+  color: $color-texto-principal;
+  text-decoration: none;
+  position: relative;
+  i {
     color: $color-destacado;
-    display: block;
-    // padding para lo que esta dentro del menu
-    padding: 0.5rem 2rem;
-    border-bottom: 2px solid $color-defondo-principal;
-    background: $color-cabecera;
-    width: 15rem;
   }
-  .respmenu input[type="checkbox"], .respmenu .fa-bars, .respmenu .fa-times {
-    position: absolute;
-    width: 48px;
-    height: 48px;
-  }
-  .respmenu .fa-bars, .respmenu .fa-times {
-    font-size: 2rem;
-    pointer-events: none;
-  }
-  .respmenu input[type="checkbox"] {
-    opacity: 0;
-  }
-  .respmenu {
-    color: $color-destacado;
-    position: relative;
-    background: $color-cabecera;
-    min-height: 48px;
-    left: -4rem; 
-  }
-  .respmenu nav {
-    display: none;
-  }
-  .respmenu input:checked ~ nav {
-    display: block;
-  }
-  .respmenu input:checked ~ .fa-bars {
-    display: none;
-  }
-  .respmenu input:not(:checked) ~ .fa-times {
-    display: none;
-  }
-// hasta aca menu hamburguesa
+}
+.link-item::after {
+  position: absolute;
+  content: "";
+  background-color:$color-destacado;
+  bottom: -5px;
+  left: -5px;
+  width: 0%;
+  height: 3px;
+  transition: 0.2s ease all;
+}
+.link-item:hover::after {
+  width: 105%;
+}
+.button-menu{
+  z-index: 200;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.fas.fa-bars {
+  font-size: 2rem;
+  color: $color-destacado;
+}
+.fas.fa-times {
+  font-size: 2rem;
+  color: $color-destacado;
+}
+
 
 // recordar cambiar la imagen y hacer que encaje con los rem
 .logoprin {
@@ -103,7 +113,7 @@ ul{
 .portada {
   height: 30rem;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .fondoPortada {
@@ -111,6 +121,8 @@ ul{
   position: relative;
   z-index: -1;
   left: -12rem;
+  top: -2rem;
+  animation: aparece 2s;
 }
 
 .textoPortada {
@@ -147,22 +159,22 @@ h3, span {
     font-family: 'The Nautigal', cursive;
     font-weight: 180;
     letter-spacing: 0.3rem;
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     color: $color-destacado;
     text-shadow: 1px 1px 2px $color-defondo-principal, 0 0 1em $color-defondo-principal, 0 0 0.2em $color-defondo-principal;
   }
 
 h4 {
-  padding: 1.3rem;
+  padding: 1.5rem;
   font-family: 'Cinzel', serif;
   color: $color-texto-principal;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 p, span{
   padding-top: 0.4rem;
   font-family: 'Cinzel', serif;
   color: $color-texto-principal;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   text-align: left;
   padding-left: 5%;
   padding-left: 5%;
@@ -177,7 +189,6 @@ p, span{
 .caja {
   border-radius: 12px;
   margin: 1rem;
-  //box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue
 }
 
 div.caja{
@@ -226,11 +237,6 @@ div.caja{
 
 .margen {
   padding-top: 1rem;
-}
-
-.hist {
-  height: 625px;
-  overflow-y: hidden;
 }
 
 // configuración del slide de fotos
@@ -299,12 +305,14 @@ div.caja{
   align-items: center;
   p, a, span {
     padding-left: 0;
-    padding-top: 0.8rem;
   }
   span {
     font-weight:bolder;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
+}
+.logo_inst {
+  height: 65px;
 }
 
 .confirmaciones {
@@ -387,6 +395,22 @@ footer {
   line-height: 1.5rem;
 }
 
+
+// para transición de imágenes
+@keyframes aparece {
+	0% {opacity: 0%}
+  15% {opacity: 15%}
+  25% {opacity: 25%}
+  33% {opacity: 33%}
+	50% {opacity: 50%}
+  66% {opacity: 66%}
+  75% {opacity: 75%}
+  88% {opacity: 88%}
+	100% {opacity: 100%}
+}
+  
+
+
 // para monitores
 @media (min-width:769px) {
   .cabecera {
@@ -422,5 +446,30 @@ h3, span {
 }
 .portada .textoPortada #segundos {
   display: inline;
+}
+
+
+// nav
+.button-menu {
+  display: none;
+}
+.main-nav {
+  position: static;
+  margin-left: 0;
+  flex-basis: 70%;
+  height: 100%;
+}
+.nav-links {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  background: white;
+}
+.link-item {
+  display: inline-block;
+  margin-top: 0;
+  margin-right: 2rem;
 }
 }
