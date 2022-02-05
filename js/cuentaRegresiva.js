@@ -23,7 +23,7 @@ function updateCountdown() {
     const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
 
     // Render
-    if (REMAINING_SECONDS>0){
+    if (REMAINING_SECONDS>-1){
     SPAN_DAYS.textContent = REMAINING_DAYS;
     SPAN_HOURS.textContent = REMAINING_HOURS;
     SPAN_MINUTES.textContent = REMAINING_MINUTES;

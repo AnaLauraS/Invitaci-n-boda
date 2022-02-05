@@ -35,6 +35,8 @@
         <script src="js/menu.js"></script>
         <script src="js/variables.js"></script>
         <img src="./img/images.png" alt="texto del evento - by ana" class="logoprin">
+        <p>¿Querés tus propias invitaciones web? Ingresá a --link-- <br>
+            Todos los derechos reservados</p>
     </header>
     
     <!--imagenes en pexels.com y en https://pixabay.com/es/-->
@@ -53,13 +55,14 @@
     
     <section class="cuerpo" >
         <h3 class="margen">Lugar y fecha</h3>
-        <div class="caja">
+        <div class="pantalla">
+        <div class="caja pan1">
             <h4 class="lugar"></h4>
             <iframe width="90%" height="400" style="border:0" loading="lazy" allowfullscreen id="apiMap"></iframe> 
             <p class="ultimo">Dirección: <span id="dir"></span></p>
             <script src="js/variables.js"></script>
         </div>
-        <div class="caja">
+        <div class="caja pan2">
             <h4>Día y hora</h4>
             <div id="detalles">
                 <i class="fas fa-calendar-day"></i>
@@ -71,15 +74,16 @@
             </div>    
             <script src="js/variables.js"></script>
         </div>
-        <div class="caja">
+        <div class="caja pan3">
             <h4>Código de vestimenta</h4>
             <img class="img_code" alt="dress code" id="ca">
             <p class="dress_code ultimo"></p>
             <script src="js/variables.js"></script>
         </div>
+        </div>
     </section>
     
-    <section class="cuerpo" >
+    <section class="cuerpo centrado2" >
         <h3 class="margen">Confirmar asistencia</h3>
         <div class="caja confirmaciones">
             <a class="confirmacion1" target="_blank">
@@ -101,7 +105,7 @@
         </div>
     </section>
 
-    <section class="cuerpo" >
+    <section class="cuerpo centrado2" >
         <h3 class="margen">Mesa de regalos</h3>
         <div class="caja confirmaciones">
             <a class="mesa1" target="_blank">
@@ -118,9 +122,9 @@
         </div>
     </section>
 
-    <section class="cuerpo" >
+    <section class="cuerpo centrado2" >
         <h3 class="margen">Historia en las redes</h3>
-        <div class="caja">
+        <div class="caja2">
             <div class="container-slider">
                 <div class="slider" id="slider">
                     <!--agregar tantos div como fotos principales. Acordarse de modificar el src-->
@@ -149,7 +153,7 @@
     </section>
     
     <footer><p>¿Querés tus propias invitaciones web? Ingresá a --link--</p> 
-        <p>Todos los derechos reservados</p></footer >
+        <p>Todos los derechos reservados</p></footer>
 
 </body>
 
